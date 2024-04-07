@@ -3,6 +3,8 @@ import { ClassNames } from '@emotion/react';
 import React, { useState, useEffect } from 'react';
 import styles from './dashboard.module.css';
 import 'bootstrap/dist/css/bootstrap.min.css';
+import { Modal, Button, Form } from 'react-bootstrap'; // Import modal components from react-bootstrap
+import 'bootstrap/dist/css/bootstrap.min.css'; // Import Bootstrap CSS
 
 
 const AppSidebar: React.FC = () => {

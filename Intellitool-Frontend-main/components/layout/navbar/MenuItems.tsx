@@ -67,7 +67,7 @@ export const MenuItems = ({ isOpen = false, links }: MenuItemsProps) => {
         {/* CTA Button -> Login / Profile */}
         <div className="mt-4 lg:mt-0">
           {!isLoggedIn ? (
-            <Button onClick={() => handleLogin()}>Login</Button>
+            <Button onClick={() => handleLogin()}>Google Login</Button>
           ) : (
             <div
               className="relative w-[36px] h-[36px] cursor-pointer"

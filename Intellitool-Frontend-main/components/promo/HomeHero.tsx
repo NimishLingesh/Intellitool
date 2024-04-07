@@ -4,8 +4,23 @@ import Image from 'next/image';
 import { keyframes } from '@emotion/react';
 import Link from 'next/link';
 import { textLinearGradientClassName } from '@/styles/styles';
+import React, { useState, useContext } from 'react';
+import { Modal, Button, Form, Row, Col } from 'react-bootstrap'; // Import modal components from react-bootstrap
+import 'bootstrap/dist/css/bootstrap.min.css'; 
+import LoginModal from './LoginModal';
+import SignupModal from './SignupModal';
 
 export const HomeHero = () => {
+  const [showLoginModal, setShowLoginModal] = useState(false);
+  const [showSignupModal, setShowSignupModal] = useState(false);
+
+  const handleLoginModalOpen = () => setShowLoginModal(true);
+  const handleLoginModalClose = () => setShowLoginModal(false);
+
+  const handleSignupModalOpen = () => setShowSignupModal(true);
+  const handleSignupModalClose = () => setShowSignupModal(false);
+
+
   return (
     <Flex
       minH="90vh"
@@ -51,6 +66,17 @@ export const HomeHero = () => {
           <Text as="span">📚</Text>
         </Flex>
       </Flex>
+      
+      <div>
+      <div style={{ display: 'inline-block', marginRight: '20px' }}>
+        <button onClick={handleLoginModalOpen} style={{ background: 'linear-gradient(45deg, #660A22, #ff869a)', padding: '15px 20px', border: 'none', borderRadius: '5px', color: '#fff' }}>Login</button>
+        <LoginModal show={showLoginModal} handleClose={handleLoginModalClose} />
+      </div>
+      <div style={{ display: 'inline-block' }}>
+        <button onClick={handleSignupModalOpen} style={{ background: 'linear-gradient(45deg, #660A22, #ff869a)', padding: '15px 20px', border: 'none', borderRadius: '5px', color: '#fff' }}>Student Register</button>
+        <SignupModal show={showSignupModal} handleClose={handleSignupModalClose} />
+      </div>
+    </div>
 
       {/* Center Content */}
       <Flex position="relative" justifyContent="center" mx="18px" zIndex={1}>
